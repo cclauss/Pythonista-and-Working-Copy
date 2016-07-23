@@ -9,9 +9,9 @@ Pre requisites:
 Workflow:
 * In _Working Copy_ open a GitHub repository that you want copied into _Pythonista_
   * if your needs are more modest, you can even select a single file or folder
-* Click the Share icon at the upper right of the Working Copy screen
+* Click the Share icon at the upper right corner of the Working Copy screen
 * Click Run Pythonista Script
-* Pick this script
+* Click on this script
 * Click the run button
 
 When you [return to Pythonista](pythonista://) your files should be in the 'from Working Copy' directory.
