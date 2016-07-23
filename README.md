@@ -1,6 +1,6 @@
 # Pythonista and Working Copy
 
-Allow Pythonista to download a git repo, file, or folder, from the Working Copy app on iOS
+[Appex script](http://omz-software.com/pythonista/docs/ios/appex.html) that enables Pythonista to download a git repo, file, or folder from a share sheet from the Working Copy app on iOS
 
 Pre requisites:
 * [Pythonista for iOS](http://omz-software.com/pythonista/)
