@@ -1,6 +1,6 @@
-# Pythonista-and-Working-Copy
+# Pythonista and Working Copy
 
-Allow Pythonista to download a git repo, file, or folder, from the Working Copy app
+Allow Pythonista to download a git repo, file, or folder, from the Working Copy app on iOS
 
 Pre requisites:
 * [Pythonista for iOS](http://omz-software.com/pythonista/)
