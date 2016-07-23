@@ -40,11 +40,13 @@ def main():
         func = move_folder if file_paths[-1].endswith('.zip') else move_file
         print(func(file_paths))
     else:
-        print('''In Working Copy app select a file, directory, or repo to be
-                 copied into Pythonista.  slick the Share icon at the upperight
-Click Run Pythonista Script.  Pick this script and click the run button.  When
-you return to Pythonista the files should be in the 'fromWorking Copy'
-directory.''')
+        print('''
+In Working Copy app select a file, directory, or repo to be copied into Pythonista.
+Click the Share icon at the upper right corner of the Working Copy screen.
+Click Run Pythonista Script.
+Click on this script.
+Click the run button.
+When you return to Pythonista your files should be in the 'from Working Copy' directory.''')
 
 if __name__ == '__main__':
     main()
