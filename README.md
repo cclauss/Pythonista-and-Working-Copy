@@ -18,7 +18,7 @@ Workflow:
 When you [return to Pythonista](pythonista://) your files should be in the 'from Working Copy' directory.
 
 ## Pythonista --> Working Copy
-Working Copy has a "__save to Working Copy__" Share Sheet action (you might have to enable in Share Sheet, More...
+Working Copy has a "__save to Working Copy__" Share Sheet action (you might have to enable in Share Sheet, More...)
 This currently only works on a single file basis (e.g. not a whole folder all at once).
 
 Workflow:
