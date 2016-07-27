@@ -19,9 +19,8 @@ When you [return to Pythonista](pythonista://) your files should be in the 'from
 
 ## Pythonista --> Working Copy
 Working Copy has a "__save to Working Copy__" Share Sheet action (you might have to enable in Share Sheet, More...)
-This currently only works on a single file basis (e.g. not a whole folder all at once).
 
-Workflow:
+Workflow A -- a single file:
 * Open the file of interest in the Pythonista editor
 * Click the wrench icon at the upper right
 * Click the "Share..." button
@@ -30,6 +29,15 @@ Workflow:
 * Click "Save As..."
 * Change the filename if you want to and click "Save As..." again
 * Click "Just Save" if you want to bundle multiple files into a single commit --or-- Type your commit message and click "Commit"
+
+Workflow B -- a folder or a file:
+* Click `Edit` in the Pythonista file browser
+* Select the folder or files of interest
+* Click the Share icon at the bottom of the file browser
+* Click "Save in Working Copy" button
+* Select "Import as Repository" or "Save as Directory"
+
+Note: When selecting multiple folders or multiple files, only the first one is processed.
 
 __Now we have an end to end workflow: GitHub --> Working Copy --> Pythonista --> Working Copy --> GitHub__
 
