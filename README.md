@@ -32,7 +32,7 @@ Workflow A -- a single file:
 
 Workflow B -- a folder or a file:
 * Click `Edit` in the Pythonista file browser
-* Select the folder or files of interest
+* Select the folder or file of interest
 * Click the Share icon at the bottom of the file browser
 * Click "Save in Working Copy" button
 * Select "Import as Repository" or "Save as Directory"
