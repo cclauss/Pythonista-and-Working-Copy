@@ -3,50 +3,32 @@
 
 # Appex script to copy a git file, folder, or repo from the Working Copy app
 
-import appex, os, shutil, zipfile
+import appex, os, shutil
 
 from_wc = os.path.abspath(os.path.expanduser('from Working Copy'))
-
-
-def move_file(file_paths):
-    assert_msg = 'How did you select multiple files in Working Copy?!?'
-    assert len(file_paths) == 1, assert_msg
-    local_path = file_paths[0].split('/File Provider Storage/')[-1]
-    local_path, file_name = os.path.split(local_path)
-    local_path = os.path.join(from_wc, local_path)
-    os.makedirs(local_path, exist_ok=True)
-    shutil.copy2(file_paths[0], local_path)
-    # editor.open_file(os.path.join(local_path, file_name))
-    return '{} was copied to {}'.format(file_name, local_path)
-
-
-def move_folder(file_paths):
-    assert_msg = 'How did you select multiple directories in Working Copy?!?'
-    assert len(file_paths) == 2, assert_msg
-    print(file_paths)
-    local_path = file_paths[0].split('/File Provider Storage/')[-1]
-    local_path = os.path.join(from_wc, local_path)
-    os.makedirs(local_path, exist_ok=True)
-    with zipfile.ZipFile(file_paths[-1]) as in_file:
-        in_file.extractall(path=local_path)
-    fmt = '{} was expanded into {}'
-    return fmt.format(os.path.split(file_paths[-1])[-1], local_path)
 
 
 def main():
     if appex.is_running_extension():
         file_paths = appex.get_file_paths()
-        assert file_paths, 'No file paths found!'
-        func = move_folder if file_paths[-1].endswith('.zip') else move_file
-        print(func(file_paths))
+        assert len(file_paths) == 1, 'Invalid file paths: {}'.format(file_paths)
+        srce_path = file_paths[0]
+        dest_path = srce_path.split('/File Provider Storage/')[-1]
+        dest_path = os.path.join(from_wc, dest_path)
+        file_path, file_name = os.path.split(dest_path)
+        os.makedirs(file_path, exist_ok=True)
+        if os.path.isdir(srce_path):
+            shutil.rmtree(dest_path, ignore_errors=True)
+            print(shutil.copytree(srce_path, dest_path))
+        else:
+            print(shutil.copy2(srce_path, dest_path))
+        print('{} was copied to {}'.format(file_name, file_path))
     else:
-        print('''
-In Working Copy app select a file, directory, or repo to be copied into Pythonista.
-Click the Share icon at the upper right corner of the Working Copy screen.
-Click Run Pythonista Script.
-Click on this script.
-Click the run button.
-When you return to Pythonista your files should be in the 'from Working Copy' directory.''')
+        print('''* In Working Copy app select a repo, file, or directory to be
+copied into Pythonista.  Click the Share icon at the upperight.  Click Run
+Pythonista Script.  Pick this script and click the run button.  When you return
+to Pythonista the files should be in the 'from Working Copy'
+directory.'''.replace('\n', ' ').replace('.  ', '.\n* '))
 
 if __name__ == '__main__':
     main()
