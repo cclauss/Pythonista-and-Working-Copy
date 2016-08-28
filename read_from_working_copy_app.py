@@ -3,7 +3,7 @@
 
 # Appex script to copy a git file, folder, or repo from the Working Copy app
 
-import appex, editor, os, shutil
+import appex, os, shutil
 
 from_wc = os.path.abspath(os.path.expanduser('from Working Copy'))
 
@@ -23,7 +23,6 @@ def main():
         else:
             print(shutil.copy2(srce_path, dest_path))
         print('{} was copied to {}'.format(file_name, file_path))
-        editor.reload_files()  # refresh the editor to show the new file(s)
     else:
         print('''* In Working Copy app select a repo, file, or directory to be
 copied into Pythonista.  Click the Share icon at the upperight.  Click Run
