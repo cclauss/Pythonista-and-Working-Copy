@@ -16,7 +16,8 @@ def main():
         dest_path = srce_path.split('/File Provider Storage/')[-1]
         dest_path = os.path.join(from_wc, dest_path)
         file_path, file_name = os.path.split(dest_path)
-        os.makedirs(file_path, exist_ok=True)
+        if not os.path.exists(file_path)
+            os.makedirs(file_path)
         if os.path.isdir(srce_path):
             shutil.rmtree(dest_path, ignore_errors=True)
             print(shutil.copytree(srce_path, dest_path))
