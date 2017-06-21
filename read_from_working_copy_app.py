@@ -13,7 +13,10 @@ def main():
         file_paths = appex.get_file_paths()
         assert len(file_paths) == 1, 'Invalid file paths: {}'.format(file_paths)
         srce_path = file_paths[0]
-        dest_path = srce_path.split('/tmp/')[-1]
+        if '/tmp/' in srce_path:
+            dest_path = srce_path.split('/tmp/')[-1]
+        else:
+            dest_path = srce_path.split('/Repositories/')[-1]
         dest_path = os.path.join(from_wc, dest_path)
         file_path, file_name = os.path.split(dest_path)
         if not os.path.exists(file_path):
