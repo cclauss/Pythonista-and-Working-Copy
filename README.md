@@ -1,11 +1,13 @@
 # Pythonista and Working Copy
 
 ![alt text](https://img.shields.io/badge/Python-2.7-blue.svg "Python 2.7")
-![alt text](https://img.shields.io/badge/Python-3.5-blue.svg "Python 3.5")
+![alt text](https://img.shields.io/badge/Python-3.5-blue.svg "Python 3.6")
 
 ## Working Copy --> Pythonista
 ### Note: Working Copy has recently made changes that might make much of this unnecessary!
 ### Please try to share a file or repo from Working Copy to Pythonista (or Editorial) and you will get an "Install a Workflow" message...
+
+Also see: https://github.com/humberry/WorkingCopy
 
 [Appex script](http://omz-software.com/pythonista/docs/ios/appex.html) that enables Pythonista to download a git repo, file, or folder from a share sheet from the Working Copy app
 
